@@ -1,0 +1,27 @@
+{
+  "name": "qa-devops-ai-challenge",
+  "version": "1.0.0",
+  "description": "Construir un flujo completo de calidad para la aplicación **QA Store**, aplicando control de versiones, CI/CD, quality gates, pruebas de performance, accesibilidad y análisis con IA.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richardDPR/qa-devops-ai-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/richardDPR/qa-devops-ai-challenge/issues"
+  },
+  "homepage": "https://github.com/richardDPR/qa-devops-ai-challenge#readme",
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
+}

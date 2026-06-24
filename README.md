@@ -13,4 +13,4 @@ Construir un flujo completo de calidad para la aplicación **QA Store**, aplican
 ## ▶️ Ejecución de pruebas
 1. Clonar repositorio:
    ```bash
-   git clone https://github.com/<tu-usuario>/qa-devops-ai-challenge.git
+   git clone https://github.com/richardDPR/qa-devops-ai-challenge.git
