@@ -14,3 +14,27 @@ Construir un flujo completo de calidad para la aplicación **QA Store**, aplican
 1. Clonar repositorio:
    ```bash
    git clone https://github.com/richardDPR/qa-devops-ai-challenge.git
+
+
+## Instalar dependencias:
+
+npm install
+
+## Ejecutar pruebas automatizadas:
+
+npm test
+
+## Revisar reportes y evidencias en la carpeta:
+
+evidences/
+
+📂 Estructura del repositorio
+
+qa-devops-ai-challenge/
+├── tests/              # Pruebas API y UI
+├── performance/        # Scripts de K6 y JMeter
+├── docs/               # Plan de pruebas, análisis IA, reportes
+├── evidences/          # Evidencias de ejecución
+├── .github/workflows/  # Pipelines de CI/CD
+├── README.md           # Documentación principal
+└── .gitignore          # Exclusiones (node_modules, logs, etc.)
