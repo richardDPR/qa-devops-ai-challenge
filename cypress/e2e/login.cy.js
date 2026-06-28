@@ -5,6 +5,6 @@ describe('Login Test', () => {
     cy.get('#loginusername').type('testuser');
     cy.get('#loginpassword').type('password');
     cy.get('button[onclick="logIn()"]').click();
-    cy.screenshot('login_test'); // genera login_test.png
+    cy.screenshot('login_test'); // genera login_test.png screenshot
   });
 });
