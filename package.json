@@ -22,6 +22,22 @@
   },
   "homepage": "https://github.com/richardDPR/qa-devops-ai-challenge#readme",
   "devDependencies": {
-    "jest": "^30.4.2"
+    "cypress": "^15.18.0",
+    "jest": "^30.4.2",
+    "jest-html-reporter": "^4.4.0"
+  },
+  "jest": {
+    "reporters": [
+      "default",
+      [
+        "jest-html-reporter",
+        {
+          "pageTitle": "QA Test Report",
+          "outputPath": "evidences/report.html",
+          "includeFailureMsg": true,
+          "includeConsoleLog": true
+        }
+      ]
+    ]
   }
 }

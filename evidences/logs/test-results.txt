@@ -1,0 +1,4 @@
+
+> qa-devops-ai-challenge@1.0.0 test
+> jest
+

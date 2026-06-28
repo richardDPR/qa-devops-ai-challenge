@@ -1,0 +1,55 @@
+name: QA CI Pipeline
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  qa-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Jest tests
+        run: npm test
+
+      - name: Generate Jest HTML report
+        run: |
+          mkdir -p evidences
+          npx jest --reporters=default --reporters=jest-html-reporter
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: qa-evidences
+          path: evidences/
+          
+      - name: Upload Jest HTML report
+        uses: actions/upload-artifact@v3
+        with:
+          name: jest-html-report
+          path: evidences/report.html
+          
+      - name: Upload Jest logs
+        uses: actions/upload-artifact@v3
+        with:
+          name: jest-logs
+          path: evidences/logs/
+
+      - name: Upload Cypress screenshots
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-screenshots
+          path: evidences/screenshots/
