@@ -60,3 +60,47 @@ La seguridad se integra en el ciclo de CI/CD desde el inicio:
   - Comando: `k6 run performance/k6/script.js`
   - Resultado de consola adjunto en `evidences/k6-results.txt`
   - Conclusión: aprobado/rechazado según métricas
+
+## 📊 Parte 5 y 6: Pruebas con JMeter
+
+### Escenario 1: Login básico con HTTP Request
+- Endpoint: https://quickpizza.grafana.com/login
+- Usuarios: 20
+- Ramp-up: 10s
+- Iteraciones: 5 por usuario
+- Tiempo promedio de respuesta: ~350 ms
+- Errores encontrados: 0
+- Conclusión: ✅ Aprobado (cumple thresholds definidos)
+
+### Escenario 2: Consulta de productos (DummyJSON)
+- Endpoint: https://dummyjson.com/products
+- Usuarios: 20
+- Ramp-up: 10s
+- Iteraciones: 5
+- Tiempo promedio de respuesta: 200 ms
+- Errores encontrados: 0
+- Conclusión: ✅ Aprobado
+
+### Escenario 3: Consulta API pública (JSONPlaceholder)
+- Endpoint: https://jsonplaceholder.typicode.com/posts
+- Usuarios: 10
+- Ramp-up: 5s
+- Iteraciones: 3
+- Tiempo promedio de respuesta: 180 ms
+- Errores encontrados: 0
+- Conclusión: ✅ Aprobado
+
+### Escenario 4: Flujo de compra simulado (DummyJSON)
+- Pasos: Login → Productos → Carrito → Checkout
+- Usuarios: 15
+- Ramp-up: 10s
+- Iteraciones: 2
+- Tiempo promedio de respuesta: 350 ms
+- Errores encontrados: 0
+- Conclusión: ✅ Aprobado
+
+### Evidencias JMeter
+- Login: evidences/jmeter-results-login.jtl
+- Productos: evidences/jmeter-results-products.jtl
+- API pública: evidences/jmeter-results-api.jtl
+- Flujo de compra: evidences/jmeter-results-shopping.jtl
