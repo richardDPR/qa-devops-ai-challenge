@@ -30,6 +30,7 @@ evidences/
 
 ## 📂 Estructura del repositorio
 
+```
 qa-devops-ai-challenge/
 ├── tests/              # Pruebas API y UI
 ├── performance/        # Scripts de K6 y JMeter
@@ -38,8 +39,7 @@ qa-devops-ai-challenge/
 ├── .github/workflows/  # Pipelines de CI/CD
 ├── README.md           # Documentación principal
 └── .gitignore          # Exclusiones (node_modules, logs, etc.)
-
---
+```
 
 ## Cypress Ejecucion
 
