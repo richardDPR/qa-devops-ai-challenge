@@ -31,25 +31,25 @@ jobs:
           npx jest --reporters=default --reporters=jest-html-reporter
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: qa-evidences
           path: evidences/
           
       - name: Upload Jest HTML report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: jest-html-report
           path: evidences/report.html
           
       - name: Upload Jest logs
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: jest-logs
           path: evidences/logs/
 
       - name: Upload Cypress screenshots
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cypress-screenshots
           path: evidences/screenshots/
