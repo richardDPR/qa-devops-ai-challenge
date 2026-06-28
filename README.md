@@ -38,3 +38,13 @@ qa-devops-ai-challenge/
 ├── .github/workflows/  # Pipelines de CI/CD
 ├── README.md           # Documentación principal
 └── .gitignore          # Exclusiones (node_modules, logs, etc.)
+
+
+## Cypress Ejecucion
+
+npx cypress run --spec cypress/e2e/login.cy.js
+
+## k6 Ejecucion
+
+k6 run performance/k6/script.js
+k6 run performance/k6/script.js > evidences/k6-results.txt 

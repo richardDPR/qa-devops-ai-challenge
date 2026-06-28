@@ -53,3 +53,20 @@ jobs:
         with:
           name: cypress-screenshots
           path: evidences/screenshots/
+
+      # 🔥 Nueva sección: pruebas de performance con K6
+      - name: Install K6
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y k6
+
+      - name: Run K6 performance tests
+        run: |
+          mkdir -p evidences
+          k6 run performance/k6/script.js > evidences/k6-results.txt
+
+      - name: Upload K6 results
+        uses: actions/upload-artifact@v4
+        with:
+          name: k6-performance-results
+          path: evidences/k6-results.txt
