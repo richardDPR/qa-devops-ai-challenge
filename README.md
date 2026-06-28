@@ -28,7 +28,7 @@ npm test
 
 evidences/
 
-📂 Estructura del repositorio
+## 📂 Estructura del repositorio
 
 qa-devops-ai-challenge/
 ├── tests/              # Pruebas API y UI
@@ -38,3 +38,19 @@ qa-devops-ai-challenge/
 ├── .github/workflows/  # Pipelines de CI/CD
 ├── README.md           # Documentación principal
 └── .gitignore          # Exclusiones (node_modules, logs, etc.)
+
+--
+
+## Cypress Ejecucion
+
+npx cypress run --spec cypress/e2e/login.cy.js
+
+## k6 Ejecucion
+
+k6 run performance/k6/script.js
+k6 run performance/k6/script.js > evidences/k6-results.txt 
+
+## Jmeter Ejecucion
+jmeter -n -t performance/jmeter/qa-store.jmx -l evidences/jmeter-results.jtl 
+jmeter -n -t performance/jmeter/qa-store.jmx -l evidences/jmeter-results.csv -Jjmeter.save.saveservice.output_format=csv 
+

@@ -2,9 +2,9 @@ name: QA CI Pipeline
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [ main, feature/qa-pipeline ]
   push:
-    branches: [ main ]
+    branches: [ main, feature/qa-pipeline ]
 
 jobs:
   qa-tests:
@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '24'
 
       - name: Install dependencies
         run: npm install
@@ -53,3 +53,20 @@ jobs:
         with:
           name: cypress-screenshots
           path: evidences/screenshots/
+
+      # 🔥 Nueva sección: pruebas de performance con K6
+      - name: Install K6
+        run: |
+          curl https://github.com/grafana/k6/releases/download/v0.50.0/k6-v0.50.0-linux-amd64.tar.gz -L | tar xvz
+          sudo mv k6-v0.50.0-linux-amd64/k6 /usr/local/bin/
+
+      - name: Run K6 performance tests
+        run: |
+          mkdir -p evidences
+          k6 run performance/k6/script.js > evidences/k6-results.txt
+
+      - name: Upload K6 results
+        uses: actions/upload-artifact@v4
+        with:
+          name: k6-performance-results
+          path: evidences/k6-results.txt
