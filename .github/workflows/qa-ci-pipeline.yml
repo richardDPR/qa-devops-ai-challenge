@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '24'
 
       - name: Install dependencies
         run: npm install
@@ -57,8 +57,8 @@ jobs:
       # 🔥 Nueva sección: pruebas de performance con K6
       - name: Install K6
         run: |
-          sudo apt-get update
-          sudo apt-get install -y k6
+          curl https://github.com/grafana/k6/releases/download/v0.50.0/k6-v0.50.0-linux-amd64.tar.gz -L | tar xvz
+          sudo mv k6-v0.50.0-linux-amd64/k6 /usr/local/bin/
 
       - name: Run K6 performance tests
         run: |
